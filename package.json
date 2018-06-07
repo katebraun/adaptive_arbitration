@@ -1,0 +1,28 @@
+{
+  "name": "adaptive_arbitration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run editorconfig && npm run stylelint",
+    "build": "gulp build",
+    "start": "gulp build && gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katebraun/adaptive_arbitration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katebraun/adaptive_arbitration/issues"
+  },
+  "homepage": "https://github.com/katebraun/adaptive_arbitration#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.6.0",
+    "browser-sync": "^2.24.4",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1"
+  }
+}
