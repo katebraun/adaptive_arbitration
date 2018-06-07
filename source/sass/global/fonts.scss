@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Circe";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: local("Circe"),
+    url("../fonts/Circe-Regular.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "IntroScriptR";
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    src: url("../fonts/IntroScriptR-H2Base.woff") format('woff');
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: local("PlayfairDisplay"),
+    url("../fonts/playfairdisplaybold.woff") format("woff");
+}
