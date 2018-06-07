@@ -1,0 +1,11 @@
+.page-header {
+  @include container
+
+  min-height: 102px;
+  display: flex;
+  align-items: center;
+}
+
+.page-header__logo {
+  margin-left: -82px;
+}

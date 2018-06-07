@@ -1,0 +1,35 @@
+.form {
+
+}
+
+.form__input {
+  box-sizing: border-box;
+  min-width: 290px;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  text-align: center;
+  padding: 12px;
+  min-height: 45px;
+}
+
+.form__button {
+  box-sizing: border-box;
+  min-width: 290px;
+  border: none;
+  background-color: $orange;
+  text-align: center;
+  padding: 13px;
+  color: $white;
+  letter-spacing: -0.02em;
+  font-family: $rlight;
+  min-height: 45px;
+
+  &:hover {
+    background-color: #f7a83a;
+  }
+
+  &:active {
+    background-color: #db8000;
+  }
+}

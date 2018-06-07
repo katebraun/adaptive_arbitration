@@ -1,0 +1,18 @@
+.page-footer {
+  @include container;
+
+  background-color: $black;
+}
+
+.page-footer__text {
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.page-footer__span {
+  text-transform: uppercase;
+  color: $orange
+}

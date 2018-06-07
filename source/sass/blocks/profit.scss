@@ -1,0 +1,89 @@
+.profit {
+  position: relative;
+  margin-bottom: 50px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background-color: $orange;
+  }
+
+  &::after {
+    top: 15px;
+    left: 22px;
+  }
+}
+
+.profit__title {
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $white;
+  padding-top: 42px;
+  margin-top: 0;
+  margin-left: 5px;
+}
+
+.profit__list {
+  @include reset-list;
+
+  counter-reset: myCounter;
+}
+
+.profit__item {
+  position: relative;
+  padding-left: 85px;
+  padding-right: 5px;
+  padding-top: 7px;
+  margin-bottom: 29px;
+  letter-spacing: 0.05em;
+
+  &::before {
+    position: absolute;
+    counter-increment: myCounter;
+    content: counter(myCounter);
+    color: rgba(255, 255, 255, 0.05);
+    top: 7px;
+    left: 57px;
+    text-align: center;
+    font-family: $rregular;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 52px;
+    height: auto;
+    width: auto;
+  }
+}
+
+.profit__text {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 6px solid #3c4147;
+    top: -3px;
+    left: -58px;
+    background-color: $white;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    top: 9px;
+    left: -46px;
+    background-color: #3c4147;
+  }
+}

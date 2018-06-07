@@ -1,0 +1,35 @@
+.bonus__title {
+  font-family: $rregular;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0 20px;
+  text-align: center;
+  padding-top: 85px;
+}
+
+.bonus__subtitle {
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  margin-top: 29px;
+
+  &--orange {
+    text-transform: uppercase;
+    color: $orange;
+    margin-top: -7px;
+  }
+}
+
+.bonus__form {
+  margin-top: 40px;
+  padding-bottom: 80px;
+}
+
+.bonus {
+  background-image: url("../img/counter-bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
