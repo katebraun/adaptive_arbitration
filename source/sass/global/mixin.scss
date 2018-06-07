@@ -1,0 +1,33 @@
+@mixin reset-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin container {
+  min-width: $mobile-width;
+  margin: 0 auto;
+  padding: 0 $mobile-paddings;
+  box-sizing: border-box;
+
+  @include tablet {
+    padding: 0 $tablet-paddings;
+  }
+
+  @include desktop {
+    padding: 0 $desktop-paddings;
+    max-width: $desktop-width;
+  }
+}

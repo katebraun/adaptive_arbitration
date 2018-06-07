@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "test": "npm run editorconfig && npm run stylelint",
-    "build": "gulp build",
-    "start": "gulp build && gulp serve"
+    "build": "gulp style",
+    "start": "gulp serve"
   },
   "repository": {
     "type": "git",
@@ -21,8 +23,11 @@
   "devDependencies": {
     "autoprefixer": "^8.6.0",
     "browser-sync": "^2.24.4",
+    "editorconfig-cli": "^0.2.1",
+    "gulp": "^3.9.1",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "^4.0.1",
+    "stylelint": "^9.2.1"
   }
 }
