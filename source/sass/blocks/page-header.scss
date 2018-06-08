@@ -8,4 +8,8 @@
 
 .page-header__logo {
   margin-left: -82px;
+
+  @include tablet {
+    margin-top: 37px;
+  }
 }

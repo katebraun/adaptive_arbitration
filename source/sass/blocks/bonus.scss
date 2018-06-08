@@ -28,8 +28,17 @@
 }
 
 .bonus {
-  background-image: url("../img/counter-bg.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 448px;
+    height: 409px;
+    top: 6px;
+    left: calc(50% - 224px);
+    background-image: url("../img/counter-bg.png");
+    background-size: cover;
+    background-clip: border-box;
+  }
 }
