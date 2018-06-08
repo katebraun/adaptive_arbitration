@@ -11,12 +11,20 @@
     top: 0;
     left: 0;
     background-color: $orange;
+
+    @include tablet {
+      left: -64px;
+    }
   }
 
   &::after {
     top: 15px;
     left: 22px;
-  }
+
+    @include tablet {
+      top: 15px;
+      left: -43px;
+    }
 }
 
 .profit__title {
@@ -28,12 +36,28 @@
   padding-top: 42px;
   margin-top: 0;
   margin-left: 5px;
+
+  @include tablet {
+    font-size: 28px;
+    line-height: 36px;
+    margin-left: 0;
+    margin-top: 106px;
+  }
 }
 
 .profit__list {
   @include reset-list;
 
   counter-reset: myCounter;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 350px;
+    margin-top: 43px;
+    padding: 0 50px;
+  }
 }
 
 .profit__item {
@@ -43,6 +67,13 @@
   padding-top: 7px;
   margin-bottom: 29px;
   letter-spacing: 0.05em;
+
+  @include tablet {
+    box-sizing: border-box;
+    width: 298px;
+    padding-left: 73px;
+    margin-bottom: 14px;
+  }
 
   &::before {
     position: absolute;
@@ -86,4 +117,4 @@
     left: -46px;
     background-color: #3c4147;
   }
-}
+}}

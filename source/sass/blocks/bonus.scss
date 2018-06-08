@@ -7,6 +7,12 @@
   padding: 0 20px;
   text-align: center;
   padding-top: 85px;
+
+  @include tablet {
+    font-size: 28px;
+    line-height: 52px;
+    padding-top: 47px;
+  }
 }
 
 .bonus__subtitle {
@@ -15,16 +21,29 @@
   letter-spacing: 0.05em;
   margin-top: 29px;
 
+  @include tablet {
+    margin-top: 59px;
+  }
+
   &--orange {
     text-transform: uppercase;
     color: $orange;
     margin-top: -7px;
+
+    @include tablet {
+      margin-top: -18px;
+    }
   }
 }
 
 .bonus__form {
   margin-top: 40px;
   padding-bottom: 80px;
+
+  @include tablet {
+    margin-top: 50px;
+    padding-bottom: 152px;
+  }
 }
 
 .bonus {
@@ -40,5 +59,11 @@
     background-image: url("../img/counter-bg.png");
     background-size: cover;
     background-clip: border-box;
+
+    @include tablet {
+      width: 716px;
+      height: 653px;
+      left: calc(50% - 358px);
+    }
   }
 }

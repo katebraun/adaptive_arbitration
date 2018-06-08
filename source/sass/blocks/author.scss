@@ -3,21 +3,48 @@
   flex-direction: column;
   align-items: center;
   margin-bottom: 83px;
-}
 
-.author__picture {
-  z-index: 1;
+  @include tablet {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 }
 
 .author__info {
+  position: relative;
   box-sizing: border-box;
   min-width: 290px;
   border: 3px solid $orange;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -107px;
   padding-top: 100px;
+  margin-top: 140px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 185px;
+    height: 239px;
+    top: -145px;
+    background-image: url("../img/photo.jpg");
+    background-size: cover;
+
+    @include tablet {
+      width: 284px;
+      height: 366px;
+      top: 56px;
+      left: -143px;
+    }
+  }
+
+  @include tablet {
+    margin-top: 40px;
+    margin-left: 140px;
+    min-height: 496px;
+    padding-left: 170px;
+    align-items: flex-start;
+  }
 }
 
 .author__subtitle {
@@ -26,6 +53,11 @@
   line-height: 18px;
   letter-spacing: 0.09em;
   margin-top: -3px;
+
+  @include tablet {
+    text-align: left;
+    margin-top: 25px;
+  }
 
   &--orange {
     font-size: 14px;
@@ -45,6 +77,11 @@
   text-transform: uppercase;
   margin-top: -23px;
   margin-bottom: 0;
+
+  @include tablet {
+    font-size: 28px;
+    line-height: 52px;
+  }
 }
 
 .author__text {
@@ -53,4 +90,10 @@
   padding: 0 10px;
   letter-spacing: 0.05em;
   padding-bottom: 51px;
+
+  @include tablet {
+    text-align: left;
+    padding: 0;
+    margin-top: 6px;
+  }
 }

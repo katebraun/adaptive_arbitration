@@ -1,3 +1,16 @@
+.form {
+  @include tablet {
+    align-self: flex-start;
+    margin-top: 31px;
+  }
+}
+
+.bonus__form {
+  @include tablet {
+    text-align: center;
+  }
+}
+
 .form__input {
   box-sizing: border-box;
   min-width: 290px;
@@ -7,6 +20,17 @@
   text-align: center;
   padding: 12px;
   min-height: 45px;
+
+  @include tablet {
+    min-width: 212px;
+    min-height: 54px;
+  }
+}
+
+.bonus__form .form__input {
+  @include tablet {
+    width: 374px;
+  }
 }
 
 .form__button {
@@ -27,5 +51,11 @@
 
   &:active {
     background-color: #db8000;
+  }
+
+  @include tablet {
+    min-width: 196px;
+    min-height: 54px;
+    margin-left: -4px;
   }
 }
