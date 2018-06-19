@@ -36,6 +36,13 @@
       top: 56px;
       left: -143px;
     }
+
+    @include desktop {
+      width: 369px;
+      height: 476px;
+      top: 60px;
+      left: -184px;
+    }
   }
 
   @include tablet {
@@ -44,6 +51,14 @@
     min-height: 496px;
     padding-left: 170px;
     align-items: flex-start;
+  }
+
+  @include desktop {
+    margin-top: 52px;
+    margin-left: 292px;
+    margin-right: 100px;
+    min-height: 600px;
+    padding-left: 265px;
   }
 }
 
@@ -59,13 +74,22 @@
     margin-top: 25px;
   }
 
+  @include desktop {
+    margin-top: 21px;
+    padding-right: 160px;
+  }
+
   &--orange {
     font-size: 14px;
     line-height: 26px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: $orange;
-    margin-top: 15px;;
+    margin-top: 15px;
+
+    @include desktop {
+      margin-top: 41px;
+    }
   }
 }
 
@@ -82,6 +106,12 @@
     font-size: 28px;
     line-height: 52px;
   }
+
+  @include desktop {
+    font-size: 40px;
+    line-height: 52px;
+    margin-top: -11px;
+  }
 }
 
 .author__text {
@@ -95,5 +125,12 @@
     text-align: left;
     padding: 0;
     margin-top: 6px;
+  }
+
+  @include desktop {
+    margin-top: 37px;
+    font-size: 18px;
+    line-height: 24px;
+    padding-right: 65px;
   }
 }

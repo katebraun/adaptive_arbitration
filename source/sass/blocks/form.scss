@@ -3,6 +3,10 @@
     align-self: flex-start;
     margin-top: 31px;
   }
+
+  @include desktop {
+    margin-top: 48px;
+  }
 }
 
 .bonus__form {
@@ -24,6 +28,10 @@
   @include tablet {
     min-width: 212px;
     min-height: 54px;
+  }
+
+  @include desktop {
+    min-width: 373px;
   }
 }
 

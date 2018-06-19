@@ -5,6 +5,7 @@
 
 .features__list {
   @include reset-list;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,6 +14,11 @@
     flex-direction: row;
     align-items: flex-start;
     padding-top: 55px
+  }
+
+  @include desktop {
+    padding-left: 110px;
+    padding-top: 166px;
   }
 }
 
@@ -30,6 +36,10 @@
 
     @include tablet {
       padding-top: 123px;
+    }
+
+    @include desktop {
+      margin-right: 0;
     }
   }
 
@@ -60,14 +70,49 @@
     align-items: flex-start;
     width: 240px;
   }
+
+  @include desktop {
+    width: 205px;
+    margin-right: 163px;
+  }
 }
 
 .features__title {
+  position: relative;
   line-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-family: $rregular;
   color: $white;
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 24px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 2px;
+      top: 12px;
+      left: -150px;
+      background-color: #242930;
+      opacity: 0.3;
+    }
+  }
+}
+
+.features__title::after {
+  @include desktop {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 2px;
+    top: 12px;
+    left: 200px;
+    background-color: #242930;
+    opacity: 0.3;
+  }
 }
 
 .features__text {
@@ -81,5 +126,12 @@
   @include tablet {
     text-align: left;
     padding-left: 0;
+  }
+
+  @include desktop {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0;
+    margin-top: 6px;
   }
 }

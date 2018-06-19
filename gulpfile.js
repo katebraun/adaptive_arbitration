@@ -6,6 +6,12 @@ var plumber = require("gulp-plumber");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
+var minify = require("gulp-csso");
+var rename = require("gulp-rename");
+var imagemin = require("gulp-imagemin");
+var del = require("del");
+var run = require("run-sequence");
+var htmlmin = require('gulp-htmlmin');
 
 gulp.task("style", function() {
   gulp.src("source/sass/style.scss")
@@ -14,13 +20,16 @@ gulp.task("style", function() {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest("source/css"))
+    .pipe(gulp.dest("build/css"))
+    .pipe(minify())
+    .pipe(rename("style.min.css"))
+    .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
 });
 
 gulp.task("serve", ["style"], function() {
   server.init({
-    server: "source/",
+    server: "build/",
     notify: false,
     open: true,
     cors: true,
@@ -28,5 +37,53 @@ gulp.task("serve", ["style"], function() {
   });
 
   gulp.watch("source/sass/**/*.{scss,sass}", ["style"]);
-  gulp.watch("source/*.html").on("change", server.reload);
+  gulp.watch("build/*.html").on("change", server.reload);
 });
+
+gulp.task("images", function () {
+  return gulp.src("source/img/**/*.{png,jpg,svg}")
+    .pipe(imagemin([
+      imagemin.optipng({optimizationLevel: 3}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.svgo()
+]))
+    .pipe(gulp.dest("build/img"));
+});
+
+gulp.task("copy", function () {
+  return gulp.src([
+      "source/fonts/**/*.{woff,woff2}",
+      "source/img/**",
+    ], {
+      base: "source"
+})
+    .pipe(gulp.dest("build"));
+});
+
+gulp.task("clean", function () {
+  return del("build");
+});
+
+gulp.task("html", function () {
+  return gulp.src("source/*.html")
+    .pipe(plumber())
+    .pipe(htmlmin({
+      minifyJS: true,
+      minifyURLs: true,
+      collapseWhitespace: true,
+      removeComments: true,
+      sortAttributes: true,
+      sortClassName: true
+    }))
+    .pipe(gulp.dest("build"))
+});
+
+gulp.task("build", function (done) {
+  run(
+    "clean",
+    "copy",
+    "images",
+    "html",
+    "style",
+    done
+); });

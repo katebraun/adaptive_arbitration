@@ -15,6 +15,10 @@
     @include tablet {
       left: -64px;
     }
+
+    @include desktop {
+      top: 3px;
+    }
   }
 
   &::after {
@@ -24,6 +28,10 @@
     @include tablet {
       top: 15px;
       left: -43px;
+    }
+
+    @include desktop {
+      top: 18px;
     }
 }
 
@@ -43,6 +51,13 @@
     margin-left: 0;
     margin-top: 106px;
   }
+
+  @include desktop {
+    font-size: 40px;
+    line-height: 52px;
+    margin-right: 330px;
+    margin-top: 131px;
+  }
 }
 
 .profit__list {
@@ -57,6 +72,28 @@
     max-height: 350px;
     margin-top: 43px;
     padding: 0 50px;
+  }
+
+  @include desktop {
+    position: relative;
+    padding: 0;
+    flex-direction: row;
+    font-size: 18px;
+    line-height: 24px;
+    flex-wrap: nowrap;
+    padding-top: 500px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 38px;
+      left: calc(50% - 934px);
+      width: 1900px;
+      height: 399px;
+      background-size: cover;
+      background-position: center;
+      background-image: url("../img/lines.png");
+    }
   }
 }
 
@@ -75,6 +112,38 @@
     margin-bottom: 14px;
   }
 
+  @include desktop {
+    position: absolute;
+    padding: 0;
+    width: 225px;
+
+    &:first-child {
+      top: 177px;
+      left: 13px;
+    }
+
+    &:nth-child(2) {
+      top: 91px;
+      left: 330px;
+    }
+
+    &:nth-child(3) {
+      top: 189px;
+      left: 539px;
+      width: 200px;
+    }
+
+    &:nth-child(4) {
+      top: 91px;
+      left: 778px;
+    }
+
+    &:last-child {
+      top: 56px;
+      left: 1008px;
+    }
+  }
+
   &::before {
     position: absolute;
     counter-increment: myCounter;
@@ -89,6 +158,7 @@
     line-height: 52px;
     height: auto;
     width: auto;
+    }
   }
 }
 
@@ -105,6 +175,12 @@
     top: -3px;
     left: -58px;
     background-color: $white;
+
+    @include desktop {
+      width: 21px;
+      height: 21px;
+      border: 9px solid #3c4147;
+    }
   }
 
   &::after {
@@ -116,5 +192,80 @@
     top: 9px;
     left: -46px;
     background-color: #3c4147;
+
+    @include desktop {
+      width: 5px;
+      height: 5px;
+    }
   }
-}}
+}
+
+.profit__text--1 {
+  @include desktop {
+    &::before {
+      top: 120px;
+      left: -10px;
+    }
+
+    &::after {
+      top: 137px;
+      left: 7px;
+    }
+  }
+}
+
+.profit__text--2 {
+  @include desktop {
+    &::before {
+      top: 122px;
+      left: -19px;
+    }
+
+    &::after {
+      top: 139px;
+      left: -2px;
+    }
+  }
+}
+
+.profit__text--3 {
+  @include desktop {
+    &::before {
+      top: 131px;
+      left: -12px;
+    }
+
+    &::after {
+      top: 148px;
+      left: 5px;
+    }
+  }
+}
+
+.profit__text--4 {
+  @include desktop {
+    &::before {
+      top: 111px;
+      left: -8px;
+    }
+
+    &::after {
+      top: 128px;
+      left: 9px;
+    }
+  }
+}
+
+.profit__text--5 {
+  @include desktop {
+    &::before {
+      top: 82px;
+      left: -21px;
+    }
+
+    &::after {
+      top: 99px;
+      left: -4px;
+    }
+  }
+}

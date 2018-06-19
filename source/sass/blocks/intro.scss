@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include desktop {
+    align-items: flex-start;
+  }
 }
 
 .intro__wrapper {
@@ -33,6 +37,12 @@
     font-size: 28px;
     line-height: 36px;
   }
+
+  @include desktop {
+    font-size: 40px;
+    line-height: 52px;
+    margin-top: -6px;
+  };
 }
 
 .intro__subtitle {
@@ -44,6 +54,10 @@
     text-align: left;
     max-width: 330px;
     margin-top: -14px;
+  }
+
+  @include desktop {
+    margin-top: -21px;
   }
 }
 
@@ -59,6 +73,10 @@
   @include tablet {
     margin-top: 38px;
     margin-left: -2px;
+  }
+
+  @include desktop {
+    margin-top: 61px;
   }
 }
 
@@ -84,6 +102,13 @@
       width: 537px;
       height: 514px;
     }
+
+    @include desktop {
+      width: 895px;
+      height: 856px;
+      top: -179px;
+      left: -163px;
+    }
   }
 
   &::after {
@@ -102,6 +127,13 @@
       height: 353px;
       top: 25px;
       left: 3px;
+    }
+
+    @include desktop {
+      width: 582px;
+      height: 588px;
+      top: -40px;
+      left: 55px;
     }
   }
 

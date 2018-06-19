@@ -22,6 +22,10 @@
     padding-top: 30px;
     margin-left: 2px;
   }
+
+  @include desktop {
+    text-align: center;
+  }
 }
 
 .page-footer__span {
